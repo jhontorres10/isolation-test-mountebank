@@ -1,0 +1,9 @@
+services:
+  autentia-it-mountebank:
+    image: bbyars/mountebank:latest
+    command: mb start --configfile /mountebank/servers/service.ejs --loglevel debug --allowInjection
+    ports:
+      - "8090:8090"
+      - "2525:2525"
+    volumes:
+      - "../mountebank:/mountebank/servers"
